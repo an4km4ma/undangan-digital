@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan - Nashoikhul & Yasmin</title>
+    
+    <!-- Import Google Fonts (Amiri untuk Arab & Playfair Display untuk Latin) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1e293b;
+            --accent: #c59b27;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--primary);
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            min-height: 100vh;
+            padding: 24px 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .arabic {
+            font-family: 'Amiri', serif;
+            font-size: 2.2rem;
+            color: var(--accent);
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .latin-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 30px 0 20px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .hero p {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 25px 0 10px;
+        }
+
+        .timer-box {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 10px;
+            border-radius: 12px;
+            min-width: 65px;
+            text-align: center;
+        }
+
+        .timer-box span {
+            display: block;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .timer-box label {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .section {
+            padding: 28px 0;
+            border-bottom: 1px dashed var(--border);
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .mempelai-box {
+            margin: 15px 0;
+        }
+
+        .mempelai-box .sub {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .btn {
+            background: #25d366;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            transition: 0.2s;
+        }
+
+        .btn-gold {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn:active {
+            opacity: 0.85;
+            transform: scale(0.98);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg);
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--accent);
+        }
+
+        iframe {
+            width: 100%;
+            height: 220px;
+            border: 0;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .rekening-card {
+            background: var(--bg);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <p style="margin-bottom: 8px;">Walimatul 'Ursy</p>
+        <div class="arabic">نصائح العباد & ياسمين</div>
+        <p style="margin-top: 15px;">Akan melangsungkan pernikahan pada:</p>
+        <p style="font-weight: 600; color: var(--primary); margin-top: 4px;">Sabtu, 12 Desember 2026</p>
+        
+        <!-- COUNTDOWN TIMER -->
+        <div class="timer">
+            <div class="timer-box"><span id="days">0</span><label>Hari</label></div>
+            <div class="timer-box"><span id="hours">0</span><label>Jam</label></div>
+            <div class="timer-box"><span id="minutes">0</span><label>Menit</label></div>
+            <div class="timer-box"><span id="seconds">0</span><label>Detik</label></div>
+        </div>
+    </div>
+
+    <!-- DETAIL MEMPELAI -->
+    <div class="section">
+        <h2>Mempelai</h2>
+        <div class="mempelai-box">
+            <div class="arabic" style="font-size: 1.8rem;">نصائح العباد</div>
+            <div class="latin-title" style="font-size: 1.1rem;">Nashoikhul Ibad</div>
+            <div class="sub">Putra dari Ibu Imroatul Hasanah</div>
+        </div>
+        
+        <p style="color: var(--accent); font-weight: bold; margin: 15px 0;">&</p>
+
+        <div class="mempelai-box">
+            <div class="arabic" style="font-size: 1.8rem;">ياسمين</div>
+            <div class="latin-title" style="font-size: 1.1rem;">Yasmin</div>
+            <div class="sub">Putri dari Bapak Abyasa</div>
+        </div>
+    </div>
+
+    <!-- LOKASI & MAPS -->
+    <div class="section">
+        <h2>Waktu & Lokasi</h2>
+        <p><strong>Akad & Resepsi:</strong> 09.00 WIB - Selesai</p>
+        <p style="color: #64748b; font-size: 0.9rem; margin-top: 4px;">Gedung Serbaguna, Jakarta</p>
+        <iframe src="https://maps.google.com/maps?q=Shangri-La%20Jakarta&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+
+    <!-- AMPLOP DIGITAL -->
+    <div class="section">
+        <h2>Hadiah / Amplop Digital</h2>
+        <div class="rekening-card">
+            <p style="font-size: 0.85rem; color: #64748b;">Bank BRI</p>
+            <p style="font-size: 1.1rem; font-weight: 700; margin: 4px 0;"><span id="norek">6219 0102 5106 533</span></p>
+            <p style="font-size: 0.85rem; font-weight: 600;">a.n NASHOIKHUL IBAD</p>
+        </div>
+        <button class="btn btn-gold" onclick="copyNorek()">Salin Nomor Rekening</button>
+    </div>
+
+    <!-- FORM RSVP VIA WHATSAPP -->
+    <div class="section" style="border-bottom: none;">
+        <h2>Konfirmasi Kehadiran</h2>
+        <form id="rsvpForm" onsubmit="event.preventDefault(); sendWA();">
+            <input type="text" id="nama" placeholder="Nama Anda" required>
+            <select id="status">
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+            <textarea id="ucapan" rows="3" placeholder="Ucapan & Doa"></textarea>
+            <button type="submit" class="btn">Kirim via WhatsApp</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // 1. Logika Hitung Mundur
+    const eventDate = new Date("Dec 12, 2026 09:00:00").getTime();
+    setInterval(() => {
+        const now = new Date().getTime();
+        const diff = eventDate - now;
+        
+        if (diff > 0) {
+            document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+        }
+    }, 1000);
+
+    // 2. Logika Salin Nomor Rekening
+    function copyNorek() {
+        const norek = document.getElementById("norek").innerText.replace(/\s+/g, '');
+        navigator.clipboard.writeText(norek).then(() => {
+            alert("Nomor rekening berhasil disalin!");
+        }).catch(() => {
+            alert("Gagal menyalin otomatis, silakan salin manual.");
+        });
+    }
+
+    // 3. Logika Kirim WhatsApp
+    function sendWA() {
+        const phone = "6285123456789"; // Ganti dengan nomor WhatsApp tujuan Anda
+        const nama = document.getElementById("nama").value.trim();
+        const status = document.getElementById("status").value;
+        const ucapan = document.getElementById("ucapan").value.trim();
+
+        if (!nama) { 
+            alert("Silakan isi nama Anda terlebih dahulu."); 
+            return; 
+        }
+
+        const text = `Halo, saya *${nama}*.%0A%0A*Konfirmasi Kehadiran:* ${status}%0A*Ucapan & Doa:* ${ucapan || '-'}`;
+        window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
+
