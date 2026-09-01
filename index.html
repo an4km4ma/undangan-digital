@@ -49,7 +49,7 @@
             overflow: hidden;
         }
 
-        /* 1. COVER PEMBUKA (PERBAIKAN ANIMASI & OVERLAY) */
+        /* 1. COVER PEMBUKA */
         .cover {
             position: fixed;
             top: 0;
@@ -337,12 +337,12 @@
         </div>
     </section>
 
-    <!-- LOKASI -->
+    <!-- LOKASI (BALI) -->
     <section id="lokasi">
         <h2>Waktu & Lokasi</h2>
-        <p style="font-size: 0.9rem;"><strong>Akad & Resepsi:</strong> 09.00 WIB - Selesai</p>
-        <p style="color: #666; font-size: 0.85rem; margin-top: 4px;">Gedung Serbaguna, Jakarta</p>
-        <a href="https://maps.google.com/?q=Shangri-La+Jakarta" target="_blank" class="btn btn-outline">
+        <p style="font-size: 0.9rem;"><strong>Akad & Resepsi:</strong> 09.00 WITA - Selesai</p>
+        <p style="color: #666; font-size: 0.85rem; margin-top: 4px;">Ubud, Gianyar, Bali</p>
+        <a href="https://maps.google.com/?q=Ubud+Bali" target="_blank" class="btn btn-outline">
             <i class="fas fa-map-marked-alt"></i> Buka di Google Maps
         </a>
     </section>
@@ -358,7 +358,7 @@
         </div>
     </section>
 
-    <!-- RSVP VIA WA -->
+    <!-- RSVP & AMPLOP -->
     <section id="rsvp">
         <h2>Amplop Digital</h2>
         <div class="rekening-card">
@@ -418,7 +418,7 @@
         }
     }
 
-    // Countdown Timer
+    // Countdown Timer (WITA)
     const eventDate = new Date("Dec 12, 2026 09:00:00").getTime();
     setInterval(() => {
         const now = new Date().getTime();
@@ -437,9 +437,9 @@
         navigator.clipboard.writeText(norek).then(() => alert("Nomor rekening berhasil disalin!"));
     }
 
-    // Send WhatsApp
+    // Send WhatsApp (Ganti nomor dengan nomor kamu)
     function sendWA() {
-        const phone = "6285156834970"; // Ganti dengan nomor WhatsApp Anda
+        const phone = "6285123456789"; 
         const nama = document.getElementById("nama").value.trim();
         const status = document.getElementById("status").value;
         const ucapan = document.getElementById("ucapan").value.trim();
